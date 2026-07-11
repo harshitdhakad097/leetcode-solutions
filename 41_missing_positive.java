@@ -1,12 +1,12 @@
 class Solution {
-    // 1. Sort the array using cyclic sort
-    // 2. Traverse the array and check if the value at index i is equal to i+1.
-    //3. remove the negative numbers and numbers greater than n from the array.
-    // 4. If the value at index i is not equal to i+1, then return i+1 as the first missing positive number.
-    // 5. If all the values are in the correct position, then return n+1 as the first missing positive number.
-    // Time Complexity: O(n)
-    // Space Complexity: O(1)
-    // 6. This solution is based on the fact that the first missing positive number must be in the range [1, n+1], where n is the length of the array.
+// 1. Rearrange the array using Cyclic Sort.
+// 2. Only numbers in the range [1, n] are placed.
+// 3. Ignore numbers <= 0 and > n because they have no valid position.
+// 4. After sorting, if nums[i] != i + 1, then i + 1 is the first missing positive.
+// 5. If every position is correct, the answer is n + 1.
+//
+// Time Complexity: O(n)
+// Space Complexity: O(1)
     
     public int firstMissingPositive(int[] nums) {
     sort(nums);
