@@ -1,0 +1,24 @@
+
+
+class Solution {
+    // in this solution we will use a hashset to store the elements of 
+    // the array and check if the element is already present in the set or not. 
+    // If it is present then we return true else we add the
+    //  element to the set and continue checking for the next element. 
+    // If we reach the end of the array without finding any duplicates then we return false.
+    public boolean containsDuplicate(int[] nums) {
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int i = 0; i < nums.length; i++) {
+
+            if(set.contains(nums[i])) {
+                return true;
+            }
+
+            set.add(nums[i]);
+        }
+
+        return false;
+    }
+}
